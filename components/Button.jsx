@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
         fontSize: TYPOGRAPHY.Button,
         lineHeight: TYPOGRAPHY.Button + 8,
         letterSpacing: 0.25,
-        fontFamily: 'Poppins_500Medium'
+        fontFamily: 'PlusJakartaSans_500Medium'
     }
 })

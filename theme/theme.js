@@ -1,8 +1,8 @@
 const COLORS = {
-    primary: "#0B2B26",
+    primary: "#252525",
 
-    primaryLight: "#DAD7CD",
-    primaryDark: "#1B1B1B"
+    primaryLight: "#FFFFFF",
+    primaryDark: "#252525"
 }
 
 const LAYOUTS = {
@@ -20,7 +20,7 @@ const LAYOUTS = {
     screenView: {
         width: "100%",
         height: "100%",
-        paddingHorizontal: 20,
+        paddingHorizontal: 30,
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
@@ -35,26 +35,26 @@ const LAYOUTS = {
 
 const TYPOGRAPHY = {
     Display: 42,
-    Button: 18,
+    Button: 20,
 
     Heading: {
         fontSize: 34,
-        fontFamily: "Poppins_500Medium",
+        fontFamily: "PlusJakartaSans_600SemiBold",
         color: COLORS.primaryDark
     },
     SubTitle: {
         fontSize: 24,
-        fontFamily: "Poppins_400Regular",
+        fontFamily: "PlusJakartaSans_400Regular",
         color: COLORS.primaryDark
     },
     Body: {
         fontSize: 15,
-        fontFamily: "Poppins_400Regular",
+        fontFamily: "PlusJakartaSans_400Regular",
         color: COLORS.primaryDark
     },
     BodyInfo: {
         fontSize: 15,
-        fontFamily: "Poppins_500Medium",
+        fontFamily: "PlusJakartaSans_500Medium",
         color: COLORS.primaryDark,
 
         textDecorationColor: COLORS.primaryDark,
@@ -64,7 +64,7 @@ const TYPOGRAPHY = {
 
     Header: {
         fontSize: 20,
-        fontFamily: "Poppins_500Medium",
+        fontFamily: "PlusJakartaSans_700Bold",
         color: COLORS.primaryDark
     },
 }

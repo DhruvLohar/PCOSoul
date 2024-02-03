@@ -31,9 +31,7 @@ export const MultiSelectInput = ({data, placeHolder, label}) => {
     )
 }
 
-const Input = ({ placeHolder, iconNameSuffix, type, IconPrefix, isTextarea, handleFormik }) => {
-
-    const { name, onChange, value } = handleFormik;
+const Input = ({ placeHolder, iconNameSuffix, type, IconPrefix, isTextarea }) => {
 
     const [showPassword, setShowPassword] = useState(false)
 
@@ -49,28 +47,20 @@ const Input = ({ placeHolder, iconNameSuffix, type, IconPrefix, isTextarea, hand
 
             {isTextarea ? (
                 <TextInput
-                    style={[styles.textarea, TYPOGRAPHY.Body, { paddingLeft: IconPrefix ? 50 : 10 }]}
+                    style={[styles.textarea, TYPOGRAPHY.Body, { paddingLeft: IconPrefix ? 55 : 20 }]}
                     placeholder={placeHolder}
                     textAlignVertical='top'
                     placeholderTextColor={COLORS.primaryDark}
                     multiline
-
-                    onChangeText={onChange(name)}
-                    // onBlur={onBlur(name)}
-                    value={value}
                 />
             ) : (
                 <>
                     <TextInput
-                        style={[styles.input, TYPOGRAPHY.Body, { paddingLeft: IconPrefix ? 50 : 10, paddingRight: iconNameSuffix ? 50 : 10 }]}
-                        placeholder={placeHolder} autoComplete={type}
+                        style={[styles.input, TYPOGRAPHY.Body, { paddingLeft: IconPrefix ? 55 : 20, paddingRight: iconNameSuffix ? 50 : 10 }]}
+                        placeholder={placeHolder} autoComplete={type} textAlignVertical="center"
                         placeholderTextColor={COLORS.primaryDark}
                         secureTextEntry={(type === 'current-password' && !showPassword)}
                         keyboardType={(type === 'email' ? 'email-address' : 'default')}
-
-                        onChangeText={onChange(name)}
-                        // onBlur={onBlur(name)}
-                        value={value}
                     />
 
                     {iconNameSuffix &&
@@ -99,9 +89,9 @@ const styles = StyleSheet.create({
     },
     input: {
         width: "100%",
-        height: 55,
-        marginVertical: 8,
-        borderRadius: 20,
+        height: 60,
+        marginVertical: 10,
+        borderRadius: 100,
 
         backgroundColor: 'transparent',
         borderStyle: "solid",
@@ -110,11 +100,11 @@ const styles = StyleSheet.create({
     },
     inputIconPrefix: {
         position: 'absolute',
-        left: 15
+        left: 20
     },
     inputIconSuffix: {
         position: 'absolute',
-        right: 15
+        right: 20
     },
 
     textarea: {

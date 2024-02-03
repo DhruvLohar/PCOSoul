@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../../theme/theme';
+import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../theme/theme';
 // import { Directions, FlingGestureHandler, State } from 'react-native-gesture-handler';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
