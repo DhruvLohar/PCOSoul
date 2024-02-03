@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Pressable, TouchableOpacity } from 'react-nativ
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../theme/theme';
 // import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
-const Button = ({ title, onPress, type, ...otherProps }) => {
+const Button = ({ title, onPress, type, style }) => {
     const [elevation, setElevation] = React.useState(5)
 
     const toggleElevationIn = () => setElevation(5)
@@ -18,8 +18,8 @@ const Button = ({ title, onPress, type, ...otherProps }) => {
             style={[
                 styles.button,
                 (type === "outline") ? styles.buttonOutline : { elevation: elevation },
+                style
             ]}
-            {...otherProps}
         >
             <Text
                 style={[

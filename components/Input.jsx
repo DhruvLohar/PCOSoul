@@ -47,7 +47,7 @@ const Input = ({ placeHolder, iconNameSuffix, type, IconPrefix, isTextarea }) =>
 
             {isTextarea ? (
                 <TextInput
-                    style={[styles.textarea, TYPOGRAPHY.Body, { paddingLeft: IconPrefix ? 55 : 20 }]}
+                    style={[styles.textarea, TYPOGRAPHY.Card.Muted, { paddingLeft: IconPrefix ? 55 : 20 }]}
                     placeholder={placeHolder}
                     textAlignVertical='top'
                     placeholderTextColor={COLORS.primaryDark}
@@ -56,7 +56,7 @@ const Input = ({ placeHolder, iconNameSuffix, type, IconPrefix, isTextarea }) =>
             ) : (
                 <>
                     <TextInput
-                        style={[styles.input, TYPOGRAPHY.Body, { paddingLeft: IconPrefix ? 55 : 20, paddingRight: iconNameSuffix ? 50 : 10 }]}
+                        style={[styles.input, TYPOGRAPHY.Card.Muted, { paddingLeft: IconPrefix ? 55 : 20, paddingRight: iconNameSuffix ? 50 : 10 }]}
                         placeholder={placeHolder} autoComplete={type} textAlignVertical="center"
                         placeholderTextColor={COLORS.primaryDark}
                         secureTextEntry={(type === 'current-password' && !showPassword)}

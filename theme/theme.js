@@ -37,9 +37,28 @@ const TYPOGRAPHY = {
     Display: 42,
     Button: 20,
 
+    Card: {
+        Heading: {
+            fontSize: 20,
+            fontFamily: "PlusJakartaSans_600SemiBold",
+            color: COLORS.primaryDark
+        },
+        Body: {
+            fontSize: 15,
+            fontFamily: "PlusJakartaSans_500Medium",
+            color: COLORS.primaryDark
+        },
+        Muted: {
+            fontSize: 15,
+            fontFamily: "PlusJakartaSans_600SemiBold",
+            color: COLORS.primaryDark,
+            opacity: .8
+        }
+    },
+
     Heading: {
         fontSize: 34,
-        fontFamily: "PlusJakartaSans_600SemiBold",
+        fontFamily: "PlusJakartaSans_700Bold",
         color: COLORS.primaryDark
     },
     SubTitle: {
