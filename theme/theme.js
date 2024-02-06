@@ -1,5 +1,5 @@
 const COLORS = {
-    primary: "#252525",
+    primary: "#B4D4AC",
 
     primaryLight: "#FFFFFF",
     primaryDark: "#252525"
@@ -15,6 +15,11 @@ const LAYOUTS = {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'start'
+    },
+    flexRowCenter: {
+        flexDirection: "row",
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 
     screenView: {

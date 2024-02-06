@@ -53,7 +53,7 @@ export default () => {
                         tabBarIcon: ({ focused }) => {
                             return (
                                 <View style={[styles.container]}>
-                                    <item.Icon size={focused ? 28 : 24} variant={focused ? "Bold" : "Outline"} color={COLORS.primaryLight} />
+                                    <item.Icon size={focused ? 28 : 24} variant={focused ? "Bold" : "Outline"} color={COLORS.primaryDark} />
                                 </View>
                             );
                         }
