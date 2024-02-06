@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../../theme/theme';
 // import { Directions, FlingGestureHandler, State } from 'react-native-gesture-handler';
 
@@ -20,7 +20,7 @@ const BlogCard = ({ data }) => {
                 </View>
             </View>
             {data.image &&
-                <Image style={{flex: 1, resizeMode: "contain", maxHeight: 200, borderRadius: 20, marginTop: -50}} source={{
+                <Image style={{flex: 1, resizeMode: "contain", maxHeight: 250, borderRadius: 20, marginTop: -50}} source={{
                     uri: "https://miro.medium.com/v2/resize:fit:754/1*78erRW_c48p2HqM3ShQfwQ.jpeg"
                 }} />
             }
@@ -38,12 +38,10 @@ export default () => {
             <Text style={[TYPOGRAPHY.Heading, {marginBottom: 20}]}>Trending Blogs 🔥</Text>
 
             <BlogCard data={BlogCards[0]} />
-            <BlogCard data={BlogCards[1]} />
-
-            {/* {BlogCards.map(blog => {
-                <BlogCard key={blog.id} data={blog} />
-            })} */}
-
+            {/* <ScrollView style={{flex: 1, maxHeight: "auto"}}>
+                <BlogCard data={BlogCards[0]} />
+                <BlogCard data={BlogCards[1]} />
+            </ScrollView> */}
         </SafeAreaView>
     );
 }

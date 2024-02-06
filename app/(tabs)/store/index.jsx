@@ -9,7 +9,11 @@ import { SearchNormal1 } from 'iconsax-react-native';
 
 const ProductCard = () => {
   return (
-    <TouchableOpacity onPress={() => console.log("smthn")} activeOpacity={0.9} style={{ width: "100%", marginBottom: 30 }}>
+    <TouchableOpacity onPress={() => console.log("smthn")} activeOpacity={0.9} style={{ flex: 1, width: "100%", marginBottom: 30 }}>
+      <Image style={{ flex: 1, resizeMode: "contain", maxHeight: 250, borderRadius: 20, marginBottom: -40 }} source={{
+        uri: "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg"
+      }} />
+
       <View style={styles.card}>
         <Text style={TYPOGRAPHY.Card.Heading}>Max Protein Bar Pack of 6</Text>
 
@@ -17,9 +21,6 @@ const ProductCard = () => {
           <Text style={[TYPOGRAPHY.SubTitle, { fontFamily: "PlusJakartaSans_800ExtraBold" }]}>Rs. 299</Text>
           <Text style={TYPOGRAPHY.Card.Muted}>In Stock</Text>
         </View>
-        <Image style={{ flex: 1, resizeMode: "contain", maxHeight: 200, borderRadius: 20 }} source={{
-          uri: "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg?q=90&crop=false"
-        }} />
       </View>
     </TouchableOpacity>
   )
@@ -30,8 +31,10 @@ export default () => {
     <SafeAreaView style={[LAYOUTS.flexCenter, LAYOUTS.screenView, { backgroundColor: COLORS.primaryLight, paddingBottom: 70 }]}>
       <StatusBar style={"dark"} />
 
-      <Text style={[TYPOGRAPHY.Heading, { marginBottom: 15 }]}>Shop with ease!</Text>
-      <Input placeHolder={' Search for " Products " '} IconPrefix={SearchNormal1} />
+      <View style={{marginBottom: 20}}>
+        <Text style={[TYPOGRAPHY.Heading, { marginBottom: 10 }]}>Shop with ease!</Text>
+        <Input placeHolder={' Search for " Products " '} IconPrefix={SearchNormal1} />
+      </View>
 
       <ProductCard />
       {/* <ScrollView style={{ width: "100%", marginTop: 10 }}>
@@ -46,6 +49,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: COLORS.primaryDark,
     borderRadius: 20,
-    padding: 20
+    padding: 20,
+    paddingTop: 50
   }
 });

@@ -13,7 +13,7 @@ export default () => {
         <SafeAreaView style={[LAYOUTS.flexCenter, LAYOUTS.screenView, { backgroundColor: COLORS.primaryLight, position: "relative", }]}>
             <StatusBar style={"dark"} />
 
-            <Text style={TYPOGRAPHY.Heading}>Good Afternoon, Dhruv</Text>
+            <Text style={TYPOGRAPHY.Heading}>Dhruv Lohar</Text>
 
         </SafeAreaView>
     );
