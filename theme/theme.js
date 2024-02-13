@@ -2,7 +2,9 @@ const COLORS = {
     primary: "#B4D4AC",
 
     primaryLight: "#FFFFFF",
-    primaryDark: "#252525"
+    primaryDark: "#252525",
+
+    Muted: "#777777",
 }
 
 const LAYOUTS = {

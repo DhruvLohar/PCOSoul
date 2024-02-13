@@ -84,9 +84,9 @@ export default () => {
             { justifyContent: "space-between", marginTop: 10 },
           ]}
         >
-          {Images.map((image) => {
+          {Images.map((image, idx) => {
             return (
-              <TouchableOpacity onPress={() => setLargeImage(image.imageUrl)}>
+              <TouchableOpacity key={idx} onPress={() => setLargeImage(image.imageUrl)}>
                 <Image
                   style={{
                     marginHorizontal: 7,
