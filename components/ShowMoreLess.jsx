@@ -1,12 +1,6 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  StyleSheet,
-  useWindowDimensions,
-} from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { useState } from "react";
-import { COLORS, LAYOUTS, TYPOGRAPHY } from "../theme/theme";
+import { LAYOUTS, TYPOGRAPHY } from "../theme/theme";
 
 export default ShowMoreShowLess = ({ items }) => {
   const [showMore, setShowMore] = useState(false);

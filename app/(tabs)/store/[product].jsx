@@ -5,23 +5,27 @@ import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
 import { ArrowLeft2, AddCircle, MinusCirlce } from "iconsax-react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
+import { useRouter, useNavigation } from "expo-router";
 import ShowMoreLess from "../../../components/ShowMoreLess";
 
 const Images = [
   {
+    id: 1,
     imageUrl:
       "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
   },
   {
+    id: 2,
     imageUrl:
       "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
   },
   {
+    id: 3,
     imageUrl:
       "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
   },
   {
+    id: 4,
     imageUrl:
       "https://maxprotein.in/cdn/shop/products/3_6799c4fd-f423-4a09-96ff-bb1f83eaaeab.jpg?v=1677498307",
   },
@@ -51,7 +55,8 @@ export default () => {
     { id: "4", title: "Item 4", data: "here there'll be the data" },
   ];
 
-  const route = useRouter();
+  // const route = useRouter();
+  const navigation = useNavigation();
   return (
     <SafeAreaView
       style={[
@@ -64,7 +69,8 @@ export default () => {
         <Text
           style={[TYPOGRAPHY.Heading, { marginLeft: -10 }]}
           onPress={() => {
-            route.back();
+            // route.back();
+            navigation.navigate("index");
           }}
         >
           <ArrowLeft2 size="32" color={COLORS.primaryDark} />
@@ -99,6 +105,7 @@ export default () => {
             return (
               <TouchableOpacity onPress={() => setLargeImage(image.imageUrl)}>
                 <Image
+                  key={image.id}
                   style={{
                     marginHorizontal: 5,
                     width: 60,
@@ -158,6 +165,9 @@ export default () => {
           Product Info
         </Text>
         <ShowMoreLess items={data} />
+        <Text style={[TYPOGRAPHY.Heading, { marginVertical: 25 }]}>
+          Ratings & Reviews
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
