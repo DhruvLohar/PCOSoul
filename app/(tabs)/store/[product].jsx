@@ -2,11 +2,17 @@ import React, { useState } from "react";
 
 import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
-import { ArrowLeft2, AddCircle, MinusCirlce } from "iconsax-react-native";
+import {
+  ArrowLeft2,
+  AddCircle,
+  MinusCirlce,
+  ShoppingCart,
+} from "iconsax-react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter, useNavigation } from "expo-router";
 import ShowMoreLess from "../../../components/ShowMoreLess";
+import Button from "../../../components/Button";
 
 const Images = [
   {
@@ -103,7 +109,10 @@ export default () => {
         >
           {Images.map((image, idx) => {
             return (
-              <TouchableOpacity key={idx} onPress={() => setLargeImage(image.imageUrl)}>
+              <TouchableOpacity
+                key={idx}
+                onPress={() => setLargeImage(image.imageUrl)}
+              >
                 <Image
                   key={image.id}
                   style={{
@@ -168,6 +177,30 @@ export default () => {
         <Text style={[TYPOGRAPHY.Heading, { marginVertical: 25 }]}>
           Ratings & Reviews
         </Text>
+        <Button
+          title={
+            <View
+              style={[
+                LAYOUTS.flexRowCenter,
+                { justifyContent: "center", flex: 1 },
+              ]}
+            >
+              <ShoppingCart size="32" color={COLORS.primaryDark} />
+              <Text
+                style={[
+                  TYPOGRAPHY.Card.Heading,
+                  {
+                    marginLeft: 10,
+                    color: COLORS.primaryDark,
+                  },
+                ]}
+              >
+                Add to Cart
+              </Text>
+            </View>
+          }
+          style={{ backgroundColor: COLORS.primary }}
+        ></Button>
       </ScrollView>
     </SafeAreaView>
   );
