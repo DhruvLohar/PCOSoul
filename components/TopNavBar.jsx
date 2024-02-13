@@ -3,33 +3,19 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { COLORS } from "../theme/theme"
 
 
-const Feed = () => {
-    return (
-        <View>
-            <Text>My feed</Text>
-        </View>
-    )
-}
-
-const Appointments = () => {
-    return (
-        <View>
-            <Text>Appointments</Text>
-        </View>
-    )
-}
-
-export default () => {
+export default ({ components }) => {
     const Tab = createMaterialTopTabNavigator()
 
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
-                tabBarActiveTintColor: COLORS.primary
+                tabBarActiveTintColor: COLORS.primaryDark,
+                tabBarInactiveTintColor: COLORS.Muted
             })}
         >
-            <Tab.Screen name="My Feed" component={Feed} />
-            <Tab.Screen name="Appointments" component={Appointments} />
+            {components.map((compi, idx) => (
+                <Tab.Screen key={idx} name={compi.Name} component={compi.Component} />
+            ))}
         </Tab.Navigator>
     )
 }

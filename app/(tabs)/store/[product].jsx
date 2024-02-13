@@ -101,9 +101,9 @@ export default () => {
             },
           ]}
         >
-          {Images.map((image) => {
+          {Images.map((image, idx) => {
             return (
-              <TouchableOpacity onPress={() => setLargeImage(image.imageUrl)}>
+              <TouchableOpacity key={idx} onPress={() => setLargeImage(image.imageUrl)}>
                 <Image
                   key={image.id}
                   style={{
