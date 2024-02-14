@@ -12,6 +12,7 @@ export default function _layout() {
         }}
       />
       <Stack.Screen name="[product]" options={{ headerShown: false }} />
+      <Stack.Screen name="cart" options={{ headerShown: false }} />
     </Stack>
   );
 }

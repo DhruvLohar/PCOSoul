@@ -2,17 +2,13 @@ import React, { useState } from "react";
 
 import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
-import {
-  ArrowLeft2,
-  AddCircle,
-  MinusCirlce,
-  ShoppingCart,
-} from "iconsax-react-native";
+import { ArrowLeft2, ShoppingCart } from "iconsax-react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter, useNavigation } from "expo-router";
+import { useRouter } from "expo-router";
 import ShowMoreLess from "../../../components/ShowMoreLess";
 import Button from "../../../components/Button";
+import QuantityButton from "../../../components/QuantityButtons";
 
 const Images = [
   {
@@ -44,15 +40,6 @@ export default () => {
     "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg";
 
   const [largeImage, setLargeImage] = useState(url);
-  const [count, setCount] = useState(1);
-
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
 
   const data = [
     { id: "1", title: "Flavour", data: "Choco Classic" },
@@ -61,8 +48,7 @@ export default () => {
     { id: "4", title: "Item 4", data: "here there'll be the data" },
   ];
 
-  // const route = useRouter();
-  const navigation = useNavigation();
+  const route = useRouter();
   return (
     <SafeAreaView
       style={[
@@ -72,17 +58,25 @@ export default () => {
       ]}
     >
       <ScrollView>
-        <Text
-          style={[TYPOGRAPHY.Heading, { marginLeft: -10 }]}
-          onPress={() => {
-            // route.back();
-            navigation.navigate("index");
-          }}
+        <View
+          style={[LAYOUTS.flexStart, { flexDirection: "row", marginLeft: -10 }]}
         >
-          <ArrowLeft2 size="32" color={COLORS.primaryDark} />
-          ProteinBars
-        </Text>
-
+          <ArrowLeft2
+            size="32"
+            color={COLORS.primaryDark}
+            onPress={() => {
+              route.back();
+            }}
+          />
+          <Text
+            style={TYPOGRAPHY.Heading}
+            onPress={() => {
+              route.back();
+            }}
+          >
+            ProteinBars
+          </Text>
+        </View>
         <Text style={[TYPOGRAPHY.Card.Muted, { marginTop: 5 }]}>
           1,122 Ratings and 8 Reviews
         </Text>
@@ -136,28 +130,7 @@ export default () => {
           style={[LAYOUTS.flexRowCenter, { justifyContent: "space-between" }]}
         >
           <Text style={[TYPOGRAPHY.Heading, { fontSize: 30 }]}>Rs. 299</Text>
-          <View style={[LAYOUTS.flexRowCenter, { width: "fit-content" }]}>
-            <AddCircle
-              size="32"
-              color="#000000"
-              variant="Outline"
-              onPress={increment}
-            />
-            <Text
-              style={[
-                TYPOGRAPHY.Display,
-                { fontSize: 30, marginHorizontal: 10, textAlign: "justify" },
-              ]}
-            >
-              {count}
-            </Text>
-            <MinusCirlce
-              size="32"
-              color="#000000"
-              variant="Outline"
-              onPress={decrement}
-            />
-          </View>
+          <QuantityButton />
         </View>
         <Text style={[TYPOGRAPHY.Card.Muted, { marginTop: 20, flex: 1 }]}>
           RiteBite Daily Choco Classic bar is made from tasty and delightful
@@ -200,6 +173,7 @@ export default () => {
             </View>
           }
           style={{ backgroundColor: COLORS.primary }}
+          onPress={() => route.push("/store/cart")}
         ></Button>
       </ScrollView>
     </SafeAreaView>

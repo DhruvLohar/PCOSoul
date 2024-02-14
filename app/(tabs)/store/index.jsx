@@ -12,11 +12,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
 import Input from "../../../components/Input";
-import { SearchNormal1 } from "iconsax-react-native";
+import { SearchNormal1, ShoppingBag } from "iconsax-react-native";
 import { useRouter } from "expo-router";
 
-const ProductCard = () => {
-  const route = useRouter();
+const ProductCard = ({ route }) => {
   return (
     <TouchableOpacity
       onPress={() => route.push("/store/1")}
@@ -63,6 +62,7 @@ const ProductCard = () => {
 };
 
 export default () => {
+  const route = useRouter();
   return (
     <SafeAreaView
       style={[
@@ -74,16 +74,25 @@ export default () => {
       <StatusBar style={"dark"} />
 
       <View style={{ marginBottom: 20 }}>
-        <Text style={[TYPOGRAPHY.Heading, { marginBottom: 10 }]}>
-          Shop with ease!
-        </Text>
+        <View
+          style={[LAYOUTS.flexRowCenter, { justifyContent: "space-between" }]}
+        >
+          <Text style={[TYPOGRAPHY.Heading, { marginBottom: 10 }]}>
+            Shop with ease!
+          </Text>
+          <ShoppingBag
+            size="36"
+            color="#000000"
+            onPress={() => route.push("/store/cart")}
+          />
+        </View>
         <Input
           placeHolder={' Search for " Products " '}
           IconPrefix={SearchNormal1}
         />
       </View>
 
-      <ProductCard />
+      <ProductCard route={route} />
       {/* <ScrollView style={{ width: "100%", marginTop: 10 }}>
       </ScrollView> */}
     </SafeAreaView>
