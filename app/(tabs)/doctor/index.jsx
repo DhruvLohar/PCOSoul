@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { useRouter } from "expo-router"
 
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../../theme/theme';
 import Input from "../../../components/Input";
+import Button from "../../../components/Button";
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SearchNormal1 } from 'iconsax-react-native';
@@ -12,6 +14,7 @@ import DoctorCard from '../../../components/DoctorCard';
 
 export default () => {
 
+    const router = useRouter()
 
     return (
         <SafeAreaView style={[LAYOUTS.flexCenter, LAYOUTS.screenView, { backgroundColor: COLORS.primaryLight, position: "relative", }]}>
@@ -25,6 +28,7 @@ export default () => {
                 placeHolder={' Search for " Doctors " '}
                 IconPrefix={SearchNormal1}
             />
+            {/* <Button onPress={() => router.push('/doctor/123')} /> */}
 
             <ScrollView style={{marginTop: 20}}>
                 <DoctorCard />

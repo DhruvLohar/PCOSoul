@@ -84,3 +84,26 @@ const Doctors = [
         contact: "+1 (555) 987-6543"
     }
 ]
+
+export const DoctorUserReviews = [
+    {
+        "username": "HappyPatient",
+        "time": "2 days ago",
+        "review": "Dr. Johnson is an amazing doctor! She was very thorough and explained everything clearly. I felt very comfortable and confident in her care."
+    },
+    {
+        "username": "SkepticalSarah",
+        "time": "1 week ago",
+        "review": "The wait time was quite long, but Dr. Johnson was knowledgeable and took the time to answer all my questions. I would recommend her, but be prepared to wait."
+    },
+    {
+        "username": "HealthConscious",
+        "time": "3 months ago",
+        "review": "Dr. Johnson is very professional and attentive. She helped me develop a personalized treatment plan that is working well for me. I appreciate her expertise and dedication."
+    },
+    {
+        "username": "CriticalCare",
+        "time": "5 months ago",
+        "review": "While Dr. Johnson is knowledgeable, I found her bedside manner to be somewhat cold and impersonal. Additionally, the office staff was not very helpful."
+    }
+]
