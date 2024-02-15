@@ -6,23 +6,24 @@ export default ShowMoreShowLess = ({ items }) => {
   const [showMore, setShowMore] = useState(false);
 
   const renderGridItems = (items) => {
-    return items.map((item) => (
+    return items.map((item, idx) => (
       <View
-        key={item.id}
+        key={idx}
         style={{
-          marginVertical: 5,
+          marginBottom: 10,
           flexDirection: "row",
           justifyContent: "space-between",
           flex: 1,
+          width: "100%"
         }}
       >
-        <Text style={[TYPOGRAPHY.Card.Muted, { flex: 1 }]}>{item.title}</Text>
+        <Text style={[TYPOGRAPHY.Card.Muted, { flex: 1, marginRight: "auto" }]}>{item.title}</Text>
         <Text
           style={{
             flex: 1,
             fontSize: 15,
             fontFamily: "PlusJakartaSans_600SemiBold",
-            textAlign: "left",
+            textAlign: "justify",
           }}
         >
           {item.data}
@@ -33,7 +34,7 @@ export default ShowMoreShowLess = ({ items }) => {
 
   return (
     <View>
-      <View style={[LAYOUTS.flexCenter, { flexWrap: "wrap" }]}>
+      <View style={[LAYOUTS.flexCenter, { maxWidth: "100%", flexWrap: "wrap" }]}>
         {showMore ? renderGridItems(items) : renderGridItems(items.slice(0, 3))}
       </View>
       <TouchableOpacity
@@ -42,6 +43,7 @@ export default ShowMoreShowLess = ({ items }) => {
       >
         <Text
           style={{
+            marginTop: 6,
             fontSize: 15,
             fontFamily: "PlusJakartaSans_600SemiBold",
             textDecorationLine: "underline",

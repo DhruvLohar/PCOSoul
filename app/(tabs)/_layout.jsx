@@ -11,7 +11,7 @@ export default () => {
     { name: "Home", title: "Home", Icon: Home, link: "/Home" },
     { name: "store", title: "Store", Icon: Shop, link: "/store" },
     { name: "blogs", title: "Blogs", Icon: Book1, link: "/blogs" },
-    { name: "doctor/index", title: "Doctors", Icon: Hospital, link: "/doctor" },
+    { name: "doctor", title: "Doctors", Icon: Hospital, link: "/doctor" },
     { name: "Profile", title: "Profile", Icon: Profile, link: "/Profile" },
   ];
 

@@ -58,25 +58,16 @@ export default () => {
       ]}
     >
       <ScrollView>
-        <View
-          style={[LAYOUTS.flexStart, { flexDirection: "row", marginLeft: -10 }]}
+        <TouchableOpacity
+          style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}
+          onPress={() => {
+            route.back();
+          }}
         >
-          <ArrowLeft2
-            size="32"
-            color={COLORS.primaryDark}
-            onPress={() => {
-              route.back();
-            }}
-          />
-          <Text
-            style={TYPOGRAPHY.Heading}
-            onPress={() => {
-              route.back();
-            }}
-          >
-            ProteinBars
-          </Text>
-        </View>
+          <ArrowLeft2 size="30" color={COLORS.primaryDark} />
+          <Text style={[TYPOGRAPHY.Heading]}>Protien Bars</Text>
+        </TouchableOpacity>
+
         <Text style={[TYPOGRAPHY.Card.Muted, { marginTop: 5 }]}>
           1,122 Ratings and 8 Reviews
         </Text>
