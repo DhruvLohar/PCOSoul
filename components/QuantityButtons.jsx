@@ -8,11 +8,11 @@ export default function QuantityButton() {
   const [count, setCount] = useState(1);
 
   const increment = () => {
-    setCount((prevCount) => prevCount + 1);
+    count === 6 ? setCount(6) : setCount((prevCount) => prevCount + 1);
   };
 
   const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
+    count === 1 ? setCount(1) : setCount((prevCount) => prevCount - 1);
   };
 
   return (
