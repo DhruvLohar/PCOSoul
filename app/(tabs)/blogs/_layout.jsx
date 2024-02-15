@@ -11,8 +11,7 @@ export default function _layout() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="[product]" options={{ headerShown: false }} />
-      <Stack.Screen name="cart" options={{ headerShown: false }} />
+      <Stack.Screen name="[slug]" options={{ headerShown: false }} />
     </Stack>
   );
 }

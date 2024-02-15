@@ -2,26 +2,32 @@ import React, { useState } from "react";
 
 import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
 import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
-import { ArrowLeft2, AddCircle, MinusCirlce } from "iconsax-react-native";
+import { ArrowLeft2, ShoppingCart } from "iconsax-react-native";
 
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import ShowMoreLess from "../../../components/ShowMoreLess";
+import Button from "../../../components/Button";
+import QuantityButton from "../../../components/QuantityButtons";
 
 const Images = [
   {
+    id: 1,
     imageUrl:
       "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
   },
   {
+    id: 2,
     imageUrl:
       "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
   },
   {
+    id: 3,
     imageUrl:
       "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
   },
   {
+    id: 4,
     imageUrl:
       "https://maxprotein.in/cdn/shop/products/3_6799c4fd-f423-4a09-96ff-bb1f83eaaeab.jpg?v=1677498307",
   },
@@ -34,15 +40,6 @@ export default () => {
     "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg";
 
   const [largeImage, setLargeImage] = useState(url);
-  const [count, setCount] = useState(1);
-
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
 
   const data = [
     { id: "1", title: "Flavour", data: "Choco Classic" },
@@ -97,8 +94,12 @@ export default () => {
         >
           {Images.map((image, idx) => {
             return (
-              <TouchableOpacity key={idx} onPress={() => setLargeImage(image.imageUrl)}>
+              <TouchableOpacity
+                key={idx}
+                onPress={() => setLargeImage(image.imageUrl)}
+              >
                 <Image
+                  key={image.id}
                   style={{
                     marginHorizontal: 5,
                     width: 60,
@@ -120,28 +121,7 @@ export default () => {
           style={[LAYOUTS.flexRowCenter, { justifyContent: "space-between" }]}
         >
           <Text style={[TYPOGRAPHY.Heading, { fontSize: 30 }]}>Rs. 299</Text>
-          <View style={[LAYOUTS.flexRowCenter, { width: "fit-content" }]}>
-            <AddCircle
-              size="32"
-              color="#000000"
-              variant="Outline"
-              onPress={increment}
-            />
-            <Text
-              style={[
-                TYPOGRAPHY.Display,
-                { fontSize: 30, marginHorizontal: 10, textAlign: "justify" },
-              ]}
-            >
-              {count}
-            </Text>
-            <MinusCirlce
-              size="32"
-              color="#000000"
-              variant="Outline"
-              onPress={decrement}
-            />
-          </View>
+          <QuantityButton />
         </View>
         <Text style={[TYPOGRAPHY.Card.Muted, { marginTop: 20, flex: 1 }]}>
           RiteBite Daily Choco Classic bar is made from tasty and delightful
@@ -158,6 +138,34 @@ export default () => {
           Product Info
         </Text>
         <ShowMoreLess items={data} />
+        <Text style={[TYPOGRAPHY.Heading, { marginVertical: 25 }]}>
+          Ratings & Reviews
+        </Text>
+        <Button
+          title={
+            <View
+              style={[
+                LAYOUTS.flexRowCenter,
+                { justifyContent: "center", flex: 1 },
+              ]}
+            >
+              <ShoppingCart size="32" color={COLORS.primaryDark} />
+              <Text
+                style={[
+                  TYPOGRAPHY.Card.Heading,
+                  {
+                    marginLeft: 10,
+                    color: COLORS.primaryDark,
+                  },
+                ]}
+              >
+                Add to Cart
+              </Text>
+            </View>
+          }
+          style={{ backgroundColor: COLORS.primary }}
+          onPress={() => route.push("/store/cart")}
+        ></Button>
       </ScrollView>
     </SafeAreaView>
   );
