@@ -59,13 +59,17 @@ export default () => {
     >
       <ScrollView>
         <TouchableOpacity
-          style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+          }}
           onPress={() => {
             route.back();
           }}
         >
           <ArrowLeft2 size="30" color={COLORS.primaryDark} />
-          <Text style={[TYPOGRAPHY.Heading]}>Protien Bars</Text>
+          <Text style={[TYPOGRAPHY.Heading]}>Protein Bars</Text>
         </TouchableOpacity>
 
         <Text style={[TYPOGRAPHY.Card.Muted, { marginTop: 5 }]}>
