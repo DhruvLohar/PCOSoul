@@ -4,14 +4,13 @@ import { FlatList, Text, View } from "react-native";
 import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
 import { ArrowLeft2 } from "iconsax-react-native";
 import QuantityButton from "../../../components/QuantityButtons";
-
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { StyleSheet, Image } from "react-native";
+import { Image } from "react-native";
 import { ProteinBars } from "../../../Data";
-import { Button } from "react-native";
-
+import Button from "../../../components/Button";
 export default function cart() {
+  const Datalength = ProteinBars.length;
   let totalAmount = 0;
   ProteinBars.forEach((item) => {
     totalAmount += item.price;
@@ -102,12 +101,42 @@ export default function cart() {
           <Text style={TYPOGRAPHY.Body}>Total Amount</Text>
           <Text style={[TYPOGRAPHY.Heading]}>{`Rs. ${totalAmount}`}</Text>
         </View>
+
         <Button
-          title="Checkout"
+          title={
+            <View style={LAYOUTS.flexRowCenter}>
+              <Text
+                style={[
+                  TYPOGRAPHY.Card.Body,
+                  {
+                    fontSize: 20,
+                    marginBottom: 7,
+                    marginLeft: -18,
+                    marginRight: 5,
+                  },
+                ]}
+              >
+                Checkout
+              </Text>
+              <Text
+                style={{
+                  width: 30,
+                  borderRadius: 20,
+                  height: 30,
+                  backgroundColor: "black",
+                  color: COLORS.primary,
+                  textAlignVertical: "center",
+                  textAlign: "center",
+                }}
+              >
+                {Datalength}
+              </Text>
+            </View>
+          }
           style={{
-            width: 200,
-            height: 20,
             backgroundColor: COLORS.primary,
+            width: 170,
+            height: 50,
           }}
         ></Button>
       </View>
