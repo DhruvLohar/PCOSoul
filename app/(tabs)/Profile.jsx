@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Dimensions, Image, ScrollView } from 'react-native';
+import { Link } from "expo-router";
 
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../theme/theme';
 import Button from "../../components/Button"
@@ -57,7 +58,9 @@ export default () => {
                             type={"fill"} style={styles.editProfile}
                             textStyles={{ fontSize: 14 }}
                         />
-                        <Setting size={32} color={COLORS.primaryDark} />
+                        <Link href={"/modal"}>
+                            <Setting size={32} color={COLORS.primaryDark} />
+                        </Link>
                     </View>
                 </View>
             </View>

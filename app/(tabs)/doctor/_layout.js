@@ -1,18 +1,31 @@
-import { View, Text } from "react-native";
-import React from "react";
-import { Stack } from "expo-router";
+import { Stack} from "expo-router";
+import TopHeader from "../../../shared/TopHeader"
 
 export default function _layout() {
-  return (
-    <Stack>
-      <Stack.Screen
-        name="index"
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen name="[id]" options={{ headerShown: false }} />
-      {/* <Stack.Screen name="[...id]" options={{ headerShown: false }} /> */}
-    </Stack>
-  );
+	return (
+		<Stack>
+			<Stack.Screen
+				name="index"
+				options={{
+					headerShown: false
+				}}
+			/>
+
+			<Stack.Screen
+				name="[id]"
+				options={{
+					headerShown: true,
+					header: ({ route }) => <TopHeader title={"Doctor's Profile"} />
+				}}
+			/>
+
+			<Stack.Screen
+				name="[...appointment]"
+				options={{
+					headerShown: true,
+					header: ({ route }) => <TopHeader title={"Appointment Booking"} />
+				}}
+			/>
+		</Stack>
+	);
 }

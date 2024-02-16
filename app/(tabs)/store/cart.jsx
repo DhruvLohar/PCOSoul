@@ -10,6 +10,7 @@ import { useRouter } from "expo-router";
 import { StyleSheet, Image } from "react-native";
 import { ProteinBars } from "../../../Data";
 import { Button } from "react-native";
+
 export default function cart() {
   let totalAmount = 0;
   ProteinBars.forEach((item) => {
@@ -24,37 +25,13 @@ export default function cart() {
         {
           backgroundColor: COLORS.primaryLight,
           position: "relative",
-          paddingBottom: 85,
+          paddingBottom: 90,
         },
       ]}
     >
       <StatusBar style={"dark"} />
-      <View
-        style={{
-          width: "100%",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
-      >
-        <ArrowLeft2
-          size="32"
-          color={COLORS.primaryDark}
-          onPress={() => {
-            route.back();
-          }}
-        />
-        <Text
-          style={TYPOGRAPHY.Heading}
-          onPress={() => {
-            route.back();
-          }}
-        >
-          Cart
-        </Text>
-      </View>
       <Text
-        style={[TYPOGRAPHY.Card.Heading, { marginVertical: 5, fontSize: 15 }]}
+        style={[TYPOGRAPHY.Card.Heading, { marginBottom: 10, fontSize: 15 }]}
       >
         Swipe Right to delete
       </Text>
@@ -65,6 +42,8 @@ export default function cart() {
         renderItem={({ item }) => (
           <View
             style={{
+              flex: 1,
+              width: "100%",
               flexDirection: "row",
               alignItems: "top",
               marginVertical: 10,
@@ -83,18 +62,16 @@ export default function cart() {
             />
             <View
               style={{
-                width: 120,
                 justifyContent: "center",
-                marginRight: 20,
+                marginRight: "auto",
               }}
             >
               <Text
                 style={[
-                  TYPOGRAPHY.Card.Body,
+                  TYPOGRAPHY.Card.Heading,
                   {
-                    fontSize: 15,
-                    textAlignVertical: "center",
-                    fontWeight: "700",
+                    fontSize: 16,
+                    maxWidth: 160
                   },
                 ]}
               >

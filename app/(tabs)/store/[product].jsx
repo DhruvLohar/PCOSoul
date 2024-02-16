@@ -57,20 +57,10 @@ export default () => {
         { backgroundColor: COLORS.primaryLight, paddingBottom: 90 },
       ]}
     >
+      <Text style={[TYPOGRAPHY.Card.Muted, { marginBottom: 5 }]}>
+        1,122 Ratings and 8 Reviews
+      </Text>
       <ScrollView>
-        <TouchableOpacity
-          style={{flexDirection: "row", justifyContent: "flex-start", alignItems: "center"}}
-          onPress={() => {
-            route.back();
-          }}
-        >
-          <ArrowLeft2 size="30" color={COLORS.primaryDark} />
-          <Text style={[TYPOGRAPHY.Heading]}>Protien Bars</Text>
-        </TouchableOpacity>
-
-        <Text style={[TYPOGRAPHY.Card.Muted, { marginTop: 5 }]}>
-          1,122 Ratings and 8 Reviews
-        </Text>
         <Image
           style={{
             width: 330,

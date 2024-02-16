@@ -71,22 +71,9 @@ export default () => {
             style={[
                 LAYOUTS.flexStart,
                 LAYOUTS.screenView,
-                { backgroundColor: COLORS.primaryLight, paddingBottom: 90 },
+                { backgroundColor: COLORS.primaryLight, paddingBottom: 90, marginTop: 15, },
             ]}
         >
-            <TouchableOpacity
-                style={{ flexDirection: "row", justifyContent: "flex-start", alignItems: "center", paddingBottom: 20 }}
-                onPress={() => {
-                    router.push('/doctor');
-                }}
-            >
-                <ArrowLeft2
-                    size={24} color={COLORS.primaryDark}
-                    style={{ marginVertical: "auto", marginTop: 5 }}
-                />
-                <Text style={[TYPOGRAPHY.SubTitle, { fontFamily: "PlusJakartaSans_600SemiBold" }]}>Doctor's Profile</Text>
-            </TouchableOpacity>
-
             <ScrollView>
                 <View style={styles.header}>
                     <Image
@@ -122,7 +109,7 @@ export default () => {
                     contentContainerStyle={{ flexGrow: 1 }}
                 />
 
-                <Button title="Book an Appointment" onPress={() => {}} type={"fill"} />
+                <Button title="Book an Appointment" onPress={() => router.push('/doctor/123/appointment')} type={"fill"} />
             </ScrollView>
         </SafeAreaView>
     );
