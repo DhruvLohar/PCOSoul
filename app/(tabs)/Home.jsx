@@ -30,8 +30,8 @@ export default () => {
         <Text style={TYPOGRAPHY.Card.Muted}>No upcoming appointments.</Text>
 
         <Text style={[TYPOGRAPHY.SubTitle, { marginVertical: 20, fontFamily: 'PlusJakartaSans_700Bold' }]}>Explore</Text>
-        <BaseCard />
-        <BaseCard />
+        <BaseCard isExpPost={true} />
+        <BaseCard isExpPost={true} />
 
       </ScrollView>
     </SafeAreaView>

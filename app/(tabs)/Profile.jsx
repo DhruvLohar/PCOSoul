@@ -39,7 +39,7 @@ export default () => {
     ]
 
     return (
-        <SafeAreaView style={{ width: "100%", height: "100%", backgroundColor: COLORS.primaryLight, paddingBottom: 70 }}>
+        <SafeAreaView style={{ width: "100%", height: "100%", backgroundColor: COLORS.primaryLight, paddingBottom: 90 }}>
             <StatusBar style={"dark"} />
 
             <View style={styles.header}>

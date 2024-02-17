@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../theme/theme';
+import { Heart, Share } from 'iconsax-react-native';
 
-export default () => {
+export default ({ isExpPost }) => {
     return (
         <View style={styles.card}>
             <View style={{ flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginBottom: 10 }}>
@@ -15,6 +16,13 @@ export default () => {
             </View>
             <Text style={TYPOGRAPHY.Card.Heading}>Lorem Ipsum dolar sit amet!</Text>
             <Text style={[TYPOGRAPHY.Card.Muted, { marginVertical: 5 }]}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim vel velit pellentesque venenatis. Aliquam eros erat, vestibulum at ultricies  ...</Text>
+        
+            {isExpPost && (
+                <View style={styles.postActions}>
+                    <Heart size={32} color={COLORS.primaryDark} style={{marginRight: 30}} /> 
+                    <Share size={32} color={COLORS.primaryDark} /> 
+                </View>
+            )}
         </View>
     )
 }
@@ -34,5 +42,12 @@ const styles = StyleSheet.create({
         fontFamily: "PlusJakartaSans_600SemiBold",
         marginRight: "auto",
         marginLeft: 20
+    },
+    postActions: {
+        flexDirection: "row", 
+        marginTop: 20,
+        paddingTop: 20,
+        borderTopWidth: .4,
+        borderTopColor: COLORS.Muted,
     }
 })

@@ -28,7 +28,9 @@ const ProductCard = ({ route }) => {
           resizeMode: "contain",
           maxHeight: 250,
           borderRadius: 20,
-          marginBottom: -40,
+          marginBottom: -45,
+          position: "relative",
+          zIndex: 100
         }}
         source={{
           uri: "https://rukminim2.flixcart.com/image/850/1000/xif0q/protein-supplement/0/e/f/protein-bars-bar-daily-choco-classic-healthy-protein-snack-no-original-imagt2znwsznkku3.jpeg",
