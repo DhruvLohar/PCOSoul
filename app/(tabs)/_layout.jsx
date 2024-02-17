@@ -57,9 +57,6 @@ export default () => {
       screenOptions={{
         tabBarStyle: styles.tabBar,
         tabBarHideOnKeyboard: true,
-        headerStyle: {
-          backgroundColor: COLORS.primaryLight,
-        },
         header: ({ route }) => <TabHeader route={route} />,
       }}
     >

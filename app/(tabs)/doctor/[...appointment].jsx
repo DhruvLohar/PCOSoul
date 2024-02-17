@@ -60,12 +60,12 @@ export default () => {
         let result = await ImagePicker.launchImageLibraryAsync({
             mediaTypes: ImagePicker.MediaTypeOptions.Images,
             allowsEditing: true,
-            aspect: [4, 3],
-            quality: 1,
+            aspect: [9, 16],
+            quality: .5,
         });
 
         if (!result.canceled) {
-            setImage(result.uri);
+            setImage(result.assets[0].uri);
         }
     };
 
@@ -77,7 +77,7 @@ export default () => {
                 Fill the form below to secure your appointment!
             </Text>
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <Input placeHolder="Describe your problem ..." type='email' IconPrefix={TextalignLeft} />
 
                 <Text style={[TYPOGRAPHY.Card.Heading, { marginBottom: 10, fontSize: 20 }]}>

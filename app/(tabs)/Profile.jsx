@@ -44,7 +44,7 @@ export default () => {
 
             <View style={styles.header}>
                 <Image
-                    style={{ width: 150, height: 150, borderRadius: 100, marginRight: 20 }}
+                    style={styles.profileImage}
                     source={{
                         uri: "https://images.unsplash.com/photo-1457449940276-e8deed18bfff?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
                     }}
@@ -90,10 +90,15 @@ const styles = StyleSheet.create({
         textAlign: "center",
         verticalAlign: "middle"
     },
+    profileImage: {
+        width: 120, height: 120, 
+        borderRadius: 100, marginRight: 20
+    },
 
     topBarContainer: {
         paddingHorizontal: 20,
         paddingTop: 20,
+        backgroundColor: COLORS.primaryLight
     }
 });
 

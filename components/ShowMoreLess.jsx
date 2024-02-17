@@ -23,7 +23,7 @@ export default ShowMoreShowLess = ({ items }) => {
             flex: 1,
             fontSize: 15,
             fontFamily: "PlusJakartaSans_600SemiBold",
-            textAlign: "justify",
+            textAlign: "left",
           }}
         >
           {item.data}

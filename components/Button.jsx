@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, Pressable, TouchableOpacity } from 'react-nativ
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../theme/theme';
 // import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
-const Button = ({ title, onPress, type, PrefixIcon, style, textStyles }) => {
+const Button = ({ title, onPress, type, PrefixIcon, showQuantity, style, textStyles }) => {
     const [elevation, setElevation] = React.useState(5)
 
     const toggleElevationIn = () => setElevation(5)
@@ -33,6 +33,22 @@ const Button = ({ title, onPress, type, PrefixIcon, style, textStyles }) => {
             >
                 {title}
             </Text>
+            {showQuantity &&
+                <Text
+                    style={{
+                        width: 30,
+                        borderRadius: 60,
+                        height: 30,
+                        backgroundColor: COLORS.primaryDark,
+                        color: COLORS.primary,
+                        textAlignVertical: "center",
+                        textAlign: "center",
+                        marginLeft: 10
+                    }}
+                >
+                    3
+                </Text>
+            }
         </TouchableOpacity>
     )
 }

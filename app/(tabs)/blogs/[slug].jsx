@@ -25,13 +25,12 @@ export default () => {
         {
           backgroundColor: COLORS.primaryLight,
           position: "relative",
-          paddingBottom: 80,
         },
       ]}
     >
       <StatusBar style={"dark"} />
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <Text
           style={[TYPOGRAPHY.Card.Heading, { marginBottom: 20, fontSize: 30 }]}
         >
@@ -53,16 +52,16 @@ export default () => {
           ]}
         >
           <Text style={[TYPOGRAPHY.Card.Muted, { fontWeight: "300" }]}>
-            John Doe
+            Author: John Doe
           </Text>
           <Text style={[TYPOGRAPHY.Card.Muted, { fontWeight: "300" }]}>
-            15 mins ago..
+            15 mins ago
           </Text>
         </View>
 
         <Image
           style={{
-            width: 330,
+            width: "100%",
             height: 270,
             marginTop: 5,
             resizeMode: "contain",
@@ -74,7 +73,7 @@ export default () => {
         />
 
         <Text style={[TYPOGRAPHY.Card.Heading, { fontSize: 30 }]}>
-          lorem Ipsum Doller !
+          Lorem Ipsum Doller !
         </Text>
         <Text
           style={[

@@ -27,7 +27,8 @@ const LAYOUTS = {
     screenView: {
         width: "100%",
         height: "100%",
-        paddingHorizontal: 30,
+        paddingHorizontal: 20,
+        paddingBottom: 90,
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',

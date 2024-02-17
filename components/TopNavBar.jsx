@@ -10,7 +10,7 @@ export default ({ components }) => {
         <Tab.Navigator
             screenOptions={({ route }) => ({
                 tabBarActiveTintColor: COLORS.primaryDark,
-                tabBarInactiveTintColor: COLORS.Muted
+                tabBarInactiveTintColor: COLORS.Muted,
             })}
         >
             {components.map((compi, idx) => (

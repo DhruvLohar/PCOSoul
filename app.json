@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Pcosoul",
+    "name": "PCOSoul",
     "slug": "pcosoul",
     "scheme": "acme",
     "version": "1.0.0",
@@ -31,6 +31,14 @@
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "463cf50f-a710-48d1-ac53-1dea75b720da"
+      }
+    }
   }
 }

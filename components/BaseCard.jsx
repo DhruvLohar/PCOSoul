@@ -1,8 +1,12 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../theme/theme';
 import { Heart, Share } from 'iconsax-react-native';
+import { useState } from 'react';
 
 export default ({ isExpPost }) => {
+
+    const [liked, setLiked] = useState(false)
+
     return (
         <View style={styles.card}>
             <View style={{ flexDirection: "row", justifyContent: "flex-start", alignItems: "center", marginBottom: 10 }}>
@@ -19,7 +23,12 @@ export default ({ isExpPost }) => {
         
             {isExpPost && (
                 <View style={styles.postActions}>
-                    <Heart size={32} color={COLORS.primaryDark} style={{marginRight: 30}} /> 
+                    <Heart 
+                        size={32} color={liked ? 'red' : COLORS.primaryDark} 
+                        variant={liked ? 'Bold' : 'Linear'}
+                        style={{marginRight: 30}} 
+                        onPress={() => setLiked(!liked)}
+                    /> 
                     <Share size={32} color={COLORS.primaryDark} /> 
                 </View>
             )}
@@ -32,7 +41,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "transparent",
         borderWidth: 2,
-        borderColor: COLORS.primaryDark,
+        borderColor: COLORS.Muted,
         borderRadius: 20,
         padding: 20,
         marginBottom: 20

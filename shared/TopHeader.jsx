@@ -17,7 +17,7 @@ const TopHeader = ({ title }) => {
                     flexDirection: "row",
                     alignItems: "center",
                     justifyContent: "flex-start",
-                    paddingHorizontal: 15
+                    paddingHorizontal: 0
                 }}
             >
                 <ArrowLeft
@@ -47,7 +47,7 @@ export default TopHeader;
 const styles = StyleSheet.create({
     container: {
         alignItems: "center",
-        paddingVertical: 16,
+        paddingVertical: 10,
     },
     tabBar: {
         position: "absolute",
