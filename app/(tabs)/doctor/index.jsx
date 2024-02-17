@@ -8,30 +8,43 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { SearchNormal1 } from 'iconsax-react-native';
+import { ArrowRight2, SearchNormal1 } from 'iconsax-react-native';
 import DoctorCard from '../../../components/DoctorCard';
+import HorizontalFilters from '../../../components/HorizontalFilters';
 
 
 export default () => {
 
     const router = useRouter()
 
+    const navigateToDoctorProfil = () => {
+        router.push("/doctor/123")
+    }
+
     return (
-        <SafeAreaView style={[LAYOUTS.flexCenter, LAYOUTS.screenView, { backgroundColor: COLORS.primaryLight, position: "relative", }]}>
+        <SafeAreaView style={[LAYOUTS.screenView, { backgroundColor: COLORS.primaryLight, position: "relative", }]}>
             <StatusBar style={"dark"} />
 
             <Text style={TYPOGRAPHY.Heading}>Consult the best, Doctor!</Text>
-            <Text style={[TYPOGRAPHY.Body, {marginBottom: 20, marginTop: 10}]}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim vel velit. 
+            <Text style={[TYPOGRAPHY.Body, { marginBottom: 20, marginTop: 10 }]}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim vel velit.
             </Text>
             <Input
                 placeHolder={' Search for " Doctors " '}
                 IconPrefix={SearchNormal1}
             />
-            {/* <Button onPress={() => router.push('/doctor/123')} /> */}
+            <View style={{ height: 80 }}>
+                <HorizontalFilters userInput={{
+                    Specialization: ['dermat', 'opthal', 'ortho'],
+                    Location: ['New York', 'Los Angeles', 'Chicago'],
+                    Fees: ['Less than $100', '$100 - $200', 'More than $200'],
+                }} />
 
-            <ScrollView style={{marginTop: 20}}>
-                <DoctorCard />
+            </View>
+
+
+            <ScrollView style={{ marginTop: 10 }}>
+                <DoctorCard name={"Sara Jones"} content={"Nutritionist"} SuffixIcon={ArrowRight2} iconAction={navigateToDoctorProfil} />
             </ScrollView>
 
         </SafeAreaView>

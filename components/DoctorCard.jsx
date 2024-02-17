@@ -4,7 +4,7 @@ import { ArrowRight2 } from "iconsax-react-native"
 
 import { useRouter } from "expo-router"
 
-export default () => {
+const DoctorCard = ({ name, content, SuffixIcon, iconAction }) => {
 
     const router = useRouter()
 
@@ -17,20 +17,24 @@ export default () => {
                 }}
             />
             <View style={{marginRight: "auto"}}>
-                <Text style={TYPOGRAPHY.Card.Heading}>Dr. Carl Jones</Text>
-                <Text style={TYPOGRAPHY.Card.Body}>Cardiologist</Text>
+                <Text style={TYPOGRAPHY.Card.Heading}>{name}</Text>
+                <Text style={TYPOGRAPHY.Card.Body}>{content}</Text>
             </View>
-            <ArrowRight2 size={32} color={COLORS.primaryDark} onPress={() => router.push('/doctor/123')} />
+            {SuffixIcon && 
+                <SuffixIcon size={32} color={COLORS.primaryDark} onPress={iconAction} />
+            }
         </View>
     )
 }
 
+export default DoctorCard;
+
 const styles = StyleSheet.create({
     container: {
         width: "100%",
-        flex: 1,
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "flex-start"
+        justifyContent: "flex-start",
+        marginBottom: 10
     }
 })

@@ -7,6 +7,7 @@ import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../theme/theme';
 import Button from "../../components/Button"
 import TopNavBar from '../../components/TopNavBar';
 import BaseCard from '../../components/BaseCard';
+import DoctorCard from '../../components/DoctorCard';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Location, Setting } from 'iconsax-react-native';
@@ -23,9 +24,10 @@ const Feed = () => {
 
 const Appointments = () => {
     return (
-        <View style={[styles.topBarContainer]}>
-            <Text>Appointments</Text>
-        </View>
+        <ScrollView style={[styles.topBarContainer]}>
+            <DoctorCard name={"John Doe"} content={"15th Jan, 2024 | 4 PM - 5 PM"} />
+            <DoctorCard name={"Sara Jones"} content={"15th Jan, 2024 | 2 PM - 3 PM"} />
+        </ScrollView>
     )
 }
 

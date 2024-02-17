@@ -3,11 +3,13 @@ import { View, StyleSheet, Text, Pressable, TouchableOpacity } from 'react-nativ
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../theme/theme';
 // import { TouchableOpacity, StyleSheet, Text } from 'react-native';
 
-const Button = ({ title, onPress, type, style, textStyles }) => {
+const Button = ({ title, onPress, type, PrefixIcon, style, textStyles }) => {
     const [elevation, setElevation] = React.useState(5)
 
     const toggleElevationIn = () => setElevation(5)
     const toggleElevationOut = () => setElevation(0)
+
+    const textColor = (type === 'outline') ? COLORS.primaryDark : COLORS.primaryLight
 
     return (
         <TouchableOpacity
@@ -21,10 +23,11 @@ const Button = ({ title, onPress, type, style, textStyles }) => {
                 style
             ]}
         >
+            {PrefixIcon && <PrefixIcon size={24} color={textColor} />}
             <Text
                 style={[
                     styles.text,
-                    { color: (type === 'outline') ? COLORS.primaryDark : COLORS.primaryLight },
+                    { color: textColor, paddingLeft: PrefixIcon ? 10 : 0 },
                     textStyles
                 ]}
             >
@@ -48,15 +51,16 @@ export default Button;
 
 const styles = StyleSheet.create({
     button: {
-        width: '100%',
+        width: "100%",
 
         backgroundColor: COLORS.primaryDark,
         color: COLORS.primaryLight,
 
+        flexDirection: "row",
         alignItems: 'center',
         justifyContent: 'center',
 
-        paddingHorizontal: 40,
+        paddingHorizontal: 20,
         paddingVertical: 17,
         marginVertical: 10,
         borderRadius: 20
