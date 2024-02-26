@@ -22,11 +22,10 @@ export default _layout = () => {
 	const tabs = useMemo(() => new Map([
 		["Home", { title: "Home", name: "Home", Icon: Home, link: "/Home" }],
 		["Store", { title: "store", name: "Store", Icon: Shop, link: "/store" }],
-		["Blogs", { title: "blogs", name: "Blogs",Icon: Book1, link: "/blogs" }],
-		["Doctors", { title: "doctor", name: "Doctors",Icon: Hospital, link: "/doctor" }],
-		["Profile", { title: "Profile", name: "Profile",Icon: Profile, link: "/Profile" }],
+		["Blogs", { title: "blogs", name: "Blogs", Icon: Book1, link: "/blogs" }],
+		["Doctors", { title: "doctor", name: "Doctors", Icon: Hospital, link: "/doctor" }],
+		["Profile", { title: "Profile", name: "Profile", Icon: Profile, link: "/Profile" }],
 	]), []);
-
 
 	return (
 		<Tabs
@@ -53,7 +52,7 @@ export default _layout = () => {
 				<Tabs.Screen
 					key={idx}
 					name={item.title}
-					initialParams={{ title: item.name, Icon: item.Icon }}
+					initialParams={{ title: item.name }}
 					options={{
 						title: item.title,
 						tabBarShowLabel: false,

@@ -90,7 +90,7 @@ const TYPOGRAPHY = {
     },
 
     Header: {
-        fontSize: 20,
+        fontSize: 21,
         fontFamily: "PlusJakartaSans_700Bold",
         color: COLORS.primaryDark
     },

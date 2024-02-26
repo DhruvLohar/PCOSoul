@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Modal, Image, ScrollView, Pressable } from 'react-native';
 import { Link } from "expo-router";
 
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../theme/theme';
@@ -31,12 +31,17 @@ const Appointments = () => {
     )
 }
 
-export default () => {
+
+
+export default function Profile() {
 
     const components = [
-        {Name: "My Feed", Component: Feed},
-        {Name: "Appointments", Component: Appointments},
+        { Name: "My Feed", Component: Feed },
+        { Name: "Appointments", Component: Appointments },
     ]
+
+    const [modalVisible, setModalVisible] = useState(false);
+
 
     return (
         <SafeAreaView style={{ width: "100%", height: "100%", backgroundColor: COLORS.primaryLight, paddingBottom: 90 }}>
@@ -60,14 +65,38 @@ export default () => {
                             type={"fill"} style={styles.editProfile}
                             textStyles={{ fontSize: 14 }}
                         />
-                        <Link href={"/modal"}>
+                        <Pressable onPress={() => setModalVisible(true)}>
                             <Setting size={32} color={COLORS.primaryDark} />
-                        </Link>
+                        </Pressable>
                     </View>
                 </View>
             </View>
 
             <TopNavBar components={components} />
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(false)}
+            >
+                <View style={modalStyles.modalContainer}>
+                    <View style={modalStyles.modalContent}>
+                        <Pressable style={modalStyles.button} onPress={() => console.log("My Orders pressed")}>
+                            <Text style={modalStyles.buttonText}>My Orders</Text>
+                        </Pressable>
+                        <Pressable style={modalStyles.button} onPress={() => console.log("Change Password pressed")}>
+                            <Text style={modalStyles.buttonText}>Change Password</Text>
+                        </Pressable>
+                        <Pressable style={modalStyles.button} onPress={() => console.log("Logout pressed")}>
+                            <Text style={modalStyles.buttonText}>Logout</Text>
+                        </Pressable>
+                        <Pressable style={modalStyles.button} onPress={() => setModalVisible(false)}>
+                            <Text style={modalStyles.buttonText}>Close</Text>
+                        </Pressable>
+                    </View>
+                </View>
+            </Modal>
         </SafeAreaView>
     );
 }
@@ -91,7 +120,7 @@ const styles = StyleSheet.create({
         verticalAlign: "middle"
     },
     profileImage: {
-        width: 120, height: 120, 
+        width: 120, height: 120,
         borderRadius: 100, marginRight: 20
     },
 
@@ -102,3 +131,32 @@ const styles = StyleSheet.create({
     }
 });
 
+const modalStyles = StyleSheet.create({
+    modalContainer: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    },
+    modalContent: {
+        backgroundColor: COLORS.primaryLight,
+        paddingVertical: 20,
+        width: '100%',
+        height: 'auto', // Adjust the height here
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        borderWidth: 2,
+        borderColor: "#ddd",
+        overflow: 'hidden', // Hide overflow content
+    },
+    button: {
+        paddingVertical: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+        width: '100%',
+        alignItems: 'center',
+    },
+    buttonText: {
+        fontSize: 16,
+    },
+})
