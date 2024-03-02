@@ -1,23 +1,21 @@
 import { Stack, useRouter } from "expo-router";
 import { StyleSheet, Text, SafeAreaView, View } from "react-native";
-import { HambergerMenu, User } from "iconsax-react-native";
+import { StatusBar } from "expo-status-bar";
 
-import { COLORS, TYPOGRAPHY } from "../theme/theme";
+import { COLORS, TYPOGRAPHY, LAYOUTS } from "../theme/theme";
 import Button from "../components/Button";
 
 const Orders = () => {
     return (
-        <SafeAreaView style={styles.container} >
-            <Stack.Screen options={{
-                headerTitle: "Prototype Phase"
-            }} />
-
-            <Text style={{ paddingVertical: 20, textAlign: 'center', color: COLORS.primaryDark }}>
-                PCO SOUL APP
+        <SafeAreaView style={[LAYOUTS.flexCenter, LAYOUTS.screenView, { backgroundColor: COLORS.primaryLight, position: 'relative' }]}>
+            <StatusBar style={"dark"} />
+            
+            <Text style={[TYPOGRAPHY.Heading, { marginBottom: 0 }]}>
+                My Orders
             </Text>
-
-            <Button title="Login" onPress={() => router.push("/accounts/Login")} type={"fill"} />
-            <Button title="Home" onPress={() => router.push("/Home")} type={"fill"} />
+            <Text style={[TYPOGRAPHY.Body, { marginBottom: 20, marginTop: 5 }]}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim vel velit.
+            </Text>
         </SafeAreaView>
     )
 }

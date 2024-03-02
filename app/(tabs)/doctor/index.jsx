@@ -30,7 +30,7 @@ export default () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim vel velit.
             </Text>
             <Input
-                placeHolder={' Search for " Doctors " '}
+                placeHolder={'Search By " Specialization, Location "'}
                 IconPrefix={SearchNormal1}
             />
             <View style={{ height: 80 }}>

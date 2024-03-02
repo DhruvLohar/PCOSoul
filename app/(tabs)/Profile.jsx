@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Modal, Image, ScrollView, Pressable } from 'react-native';
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 import { COLORS, LAYOUTS, TYPOGRAPHY } from '../../theme/theme';
 import Button from "../../components/Button"
@@ -34,6 +34,9 @@ const Appointments = () => {
 
 
 export default function Profile() {
+
+
+    const router = useRouter()
 
     const components = [
         { Name: "My Feed", Component: Feed },
@@ -82,13 +85,13 @@ export default function Profile() {
             >
                 <View style={modalStyles.modalContainer}>
                     <View style={modalStyles.modalContent}>
-                        <Pressable style={modalStyles.button} onPress={() => console.log("My Orders pressed")}>
+                        <Pressable style={modalStyles.button} onPress={() => router.push("/store/MyOrders")}>
                             <Text style={modalStyles.buttonText}>My Orders</Text>
                         </Pressable>
                         <Pressable style={modalStyles.button} onPress={() => console.log("Change Password pressed")}>
                             <Text style={modalStyles.buttonText}>Change Password</Text>
                         </Pressable>
-                        <Pressable style={modalStyles.button} onPress={() => console.log("Logout pressed")}>
+                        <Pressable style={modalStyles.button} onPress={() => console.log("/accounts/Login")}>
                             <Text style={modalStyles.buttonText}>Logout</Text>
                         </Pressable>
                         <Pressable style={modalStyles.button} onPress={() => setModalVisible(false)}>
@@ -136,7 +139,8 @@ const modalStyles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        backgroundColor: 'transparent',
+        
     },
     modalContent: {
         backgroundColor: COLORS.primaryLight,

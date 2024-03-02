@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
+  FlatList,
   TouchableOpacity,
   Image,
 } from "react-native";
@@ -63,6 +63,21 @@ const ProductCard = ({ route }) => {
   );
 };
 
+const data = [
+  { id: '1', name: 'Protien Bars', image: 'https://static.thcdn.com/productimg/1600/1600/12589808-1614823857888908.jpg' },
+  { id: '2', name: 'PCO Workouts', image: 'https://images.squarespace-cdn.com/content/v1/587923fe86e6c07719f1b40c/1643140603725-TG32A9YTQE0Y5IP6UBRA/unsplash-image-lrQPTQs7nQQ.jpg' },
+  { id: '3', name: 'Lab Tests', image: 'https://www.eehealth.org/-/media/images/modules/blog/posts/2020/11/lab-tests.jpg' },
+];
+
+const renderItem = ({ item }) => {
+  return (
+    <View style={styles.item}>
+      <Image source={{ uri: item.image }} style={styles.image} />
+      <Text style={styles.text}>{item.name}</Text>
+    </View>
+  );
+}
+
 export default () => {
   const route = useRouter();
   return (
@@ -94,6 +109,16 @@ export default () => {
         />
       </View>
 
+      <View style={{height: 120}}>
+        <FlatList
+          data={data}
+          keyExtractor={(item) => item.id}
+          renderItem={renderItem}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+        />
+      </View>
+
       <ProductCard route={route} />
       {/* <ScrollView style={{ width: "100%", marginTop: 10 }}>
       </ScrollView> */}
@@ -109,5 +134,21 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 20,
     paddingTop: 50,
+  },
+
+  item: {
+    marginVertical: 10,
+    marginRight: 20,
+    alignItems: 'center',
+  },
+  image: {
+    width: 60,
+    height: 60,
+    resizeMode: 'cover',
+    borderRadius: 20,
+  },
+  text: {
+    marginTop: 5,
+    fontSize: 16,
   },
 });

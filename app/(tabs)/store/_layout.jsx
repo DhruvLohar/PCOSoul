@@ -7,21 +7,28 @@ export default function _layout() {
       <Stack.Screen
         name="index"
         options={{
-          headerShown: false,
+          headerShown: false
         }}
       />
 
       <Stack.Screen name="[product]"
         options={{
           headerShown: true,
-          header: ({ route }) => <TopHeader title={"Cereal Bars"} />
+          header: ({ route }) => <TopHeader title={"Cereal Bars"} onBack={"/store"} />
         }}
       />
 
       <Stack.Screen name="cart"
         options={{
           headerShown: true,
-          header: ({ route }) => <TopHeader title={"Your Cart"} />
+          header: ({ route }) => <TopHeader title={"Your Cart"} onBack={"/store"} />
+        }}
+      />
+
+      <Stack.Screen name="MyOrders"
+        options={{
+          headerShown: true,
+          header: ({ route }) => <TopHeader title={"My Orders"} onBack={"/store"} />
         }}
       />
     </Stack>

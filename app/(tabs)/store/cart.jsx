@@ -5,12 +5,11 @@ import { COLORS, LAYOUTS, TYPOGRAPHY } from "../../../theme/theme";
 import { ArrowLeft2 } from "iconsax-react-native";
 import QuantityButton from "../../../components/QuantityButtons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
 import { Image } from "react-native";
 import { ProteinBars } from "../../../Data";
 import Button from "../../../components/Button";
 
-export default function cart() {
+export default function Cart() {
 
 	const Datalength = ProteinBars.length;
 
@@ -18,8 +17,6 @@ export default function cart() {
 	ProteinBars.forEach((item) => {
 		totalAmount += item.price;
 	});
-
-	const route = useRouter();
 
 	return (
 		<SafeAreaView
@@ -111,9 +108,10 @@ export default function cart() {
 					type={"outline"}
 					style={{
 						backgroundColor: COLORS.primary,
-						width: 170,
+						width: "auto",
 						borderWidth: 0,
-						borderRadius: 100
+						borderRadius: 100,
+						paddingHorizontal: 30
 					}}
 					showQuantity={true}
 				></Button>

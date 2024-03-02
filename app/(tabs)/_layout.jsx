@@ -1,7 +1,7 @@
 import { Tabs, usePathname, useRouter } from "expo-router";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import { COLORS, TYPOGRAPHY } from "../../theme/theme";
-import { Book1, Home, Hospital, Profile, Shop } from "iconsax-react-native";
+import { Edit2, Home, Hospital, Profile, ShoppingCart } from "iconsax-react-native";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useMemo, memo } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -20,9 +20,9 @@ const TabIcon = memo(({ Icon, focused }) => {
 
 export default _layout = () => {
 	const tabs = useMemo(() => new Map([
-		["Home", { title: "Home", name: "Home", Icon: Home, link: "/Home" }],
-		["Store", { title: "store", name: "Store", Icon: Shop, link: "/store" }],
-		["Blogs", { title: "blogs", name: "Blogs", Icon: Book1, link: "/blogs" }],
+		["PCOSoul", { title: "PCOSoul", name: "PCOSoul", Icon: Home, link: "/PCOSoul" }],
+		["Store", { title: "store", name: "Store", Icon: ShoppingCart, link: "/store" }],
+		["Blogs", { title: "blogs", name: "Blogs", Icon: Edit2, link: "/blogs" }],
 		["Doctors", { title: "doctor", name: "Doctors", Icon: Hospital, link: "/doctor" }],
 		["Profile", { title: "Profile", name: "Profile", Icon: Profile, link: "/Profile" }],
 	]), []);

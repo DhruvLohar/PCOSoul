@@ -4,7 +4,7 @@ import { COLORS, TYPOGRAPHY } from "../theme/theme";
 import { ArrowLeft} from "iconsax-react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const TopHeader = ({ title }) => {
+const TopHeader = ({ title, onBack }) => {
 
     const router = useRouter()
 
@@ -23,7 +23,7 @@ const TopHeader = ({ title }) => {
                 <ArrowLeft
                     size={28}
                     color={COLORS.primaryDark}
-                    onPress={() => router.back()}
+                    onPress={() => router.push(onBack)}
                 />
                 <Text
                     style={[
