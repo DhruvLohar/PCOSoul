@@ -14,6 +14,7 @@ export default () => {
 
     const handleLogin = () => {
         console.log("maza aaya")
+        router.push("/PCOSoul")
     }
 
     return (
