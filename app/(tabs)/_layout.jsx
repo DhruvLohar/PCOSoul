@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		height: 60,
 		backgroundColor: COLORS.primaryLight,
-		paddingTop: 5,
+		paddingTop: 8,
 		paddingHorizontal: 20,
 	},
 	profileImage: {

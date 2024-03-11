@@ -23,7 +23,7 @@ const TopHeader = ({ title, onBack }) => {
                 <ArrowLeft
                     size={28}
                     color={COLORS.primaryDark}
-                    onPress={() => router.push(onBack)}
+                    onPress={() => onBack ? router.push(onBack) : router.back()}
                 />
                 <Text
                     style={[
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         height: 60,
         backgroundColor: COLORS.primaryLight,
         paddingTop: 5,
-        paddingHorizontal: 20,
+        paddingLeft: 20,
     },
     profileImage: {
         width: 44,

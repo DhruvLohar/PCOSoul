@@ -1,17 +1,9 @@
 import { useEffect } from "react";
-import { useRouter } from "expo-router";
-import { SafeAreaView } from "react-native";
+import { Redirect, useRouter } from "expo-router";
 
 
 export default () => {
     const router = useRouter()
 
-    useEffect(() => {
-        router.push("/accounts/Login")
-    })
-
-    return (
-        <SafeAreaView>
-        </SafeAreaView>
-    )
+    return <Redirect href={'/accounts/Login'} />
 }

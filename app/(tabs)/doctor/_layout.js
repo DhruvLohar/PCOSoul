@@ -15,7 +15,7 @@ export default function _layout() {
 				name="[id]"
 				options={{
 					headerShown: true,
-					header: ({ route }) => <TopHeader title={"Doctor's Profile"} />
+					header: ({ route }) => <TopHeader title={"Doctor's Profile"} onBack={'/doctor'} />
 				}}
 			/>
 
